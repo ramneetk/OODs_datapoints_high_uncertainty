@@ -1,0 +1,16 @@
+model_params:
+  net_type: 'densenet'
+  dataset_list: ['cifar10']
+  #out_dist_list: ['svhn', 'imagenet_resize', 'lsun_resize', 'subset_cifar100']
+  out_dist_list: ['imagenet_resize']
+  num_train: 1000 # 1000 for 'svhn', 'imagenet_resize', 'lsun_resize', 50*num of  OOD classes in subset_cifar100
+  partition: 2000 # req for cifar100_subset datasets
+
+exp_params:
+  #score_list: ['Mahalanobis_0.005_10','Mahalanobis_0.005_20','Mahalanobis_0.005_30','Mahalanobis_0.005_40','Mahalanobis_0.005_50']
+  score_list: ['Mahalanobis_0.0_10','Mahalanobis_0.0_20','Mahalanobis_0.0_30','Mahalanobis_0.0_40','Mahalanobis_0.0_50']
+
+logging_params:
+  outf: 'test'
+  output_file: 'cifar10_resnet34' # for running parallel experiments
+  exp_display_name: 'cifar10_resnet34' # for saving the results of parallel experiments
