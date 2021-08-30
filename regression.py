@@ -1,6 +1,6 @@
 """
-Created on Sun Oct 21 2018
-@author: Kimin Lee
+Created on Created on top of OOD_Regression_Mahalanobis.py from https://github.com/pokaxpoka/deep_Mahalanobis_detector 
+
 """
 from __future__ import print_function
 import numpy as np
