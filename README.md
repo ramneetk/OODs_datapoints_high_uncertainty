@@ -28,7 +28,7 @@ mkdir pre_trained and download the .pth files in ./pre_trained from this [link.]
 2. python regression.py
 
 ## Generating Baseline and ODIN (from deep_Mahalanobis_detector code directory) CHECK FIRST
-1. Baseline - python baseline_and_ODIN.py --dataset cifar10 --net_type resnet34 --gpu 2 --m 0 --t 1
+1. Baseline - python baseline_and_ODIN.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu 2 --m 0 --t 1
 2. ODIN - python baseline_and_ODIN.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu 2 --m 0.005 --t 10 
 
 ## Generating Mahalanobis results
