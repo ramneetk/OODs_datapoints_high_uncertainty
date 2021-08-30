@@ -6,7 +6,7 @@ model_params:
   partition: 2000 # req for cifar100_subset datasets
 
 exp_params:
-  score_list: ['Ensembled_0.0_10','Ensembled_0.0_20','Ensembled_0.0_30','Ensembled_0.0_40','Ensembled_0.0_50'] #Ensembled_noise_k
+  score_list: ['Ensembled_0.0_10','Ensembled_0.0_20','Ensembled_0.0_30','Ensembled_0.0_40','Ensembled_0.0_50'] #Ensembled_noise_k: change to ['Ensembled_0.0_0'] for generating Mahalanobis results
 
 logging_params:
   outf: 'test'
