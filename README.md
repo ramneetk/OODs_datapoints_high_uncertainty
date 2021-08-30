@@ -4,6 +4,6 @@ This code is for the [paper](http://www.gatsby.ucl.ac.uk/~balaji/udl2021/accepte
 ## Requirements
 It is tested under Ubuntu Linux 16.04.1 and Python 3.6 environment, and requries Pytorch package to be installed:
 
-⋅⋅*[Pytorch](https://pytorch.org/)
-⋅⋅*[scipy](https://github.com/scipy/scipy)
-⋅⋅*[scikit-learn](https://scikit-learn.org/stable/)
+⋅⋅* [Pytorch](https://pytorch.org/)
+⋅⋅* [scipy](https://github.com/scipy/scipy)
+⋅⋅* [scikit-learn](https://scikit-learn.org/stable/)
