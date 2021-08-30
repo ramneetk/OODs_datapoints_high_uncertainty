@@ -1,7 +1,7 @@
 model_params:
-  name: 'ResNet34' # ResNet34/ResNet50/DenseNet3/LeNet5
+  name: 'ResNet50' # ResNet34/ResNet50/DenseNet3/LeNet5
   net_type: 'resnet' # resnet/densenet/lenet5
-  pretrained_model_path: './pre_trained/resnet34_cifar10.pth' #resnet$34/50$_cifar10.pth/densenet3_cifar10.pth/resnet34_svhn.pth/densenet3_svhn.pth/lenet5_mnist.pth
+  pretrained_model_path: './pre_trained/resnet50_cifar10.pth' #resnet$34/50$_cifar10.pth/densenet3_cifar10.pth/resnet34_svhn.pth/densenet3_svhn.pth/lenet5_mnist.pth
   penul_layer: 4 #4 for resnet and 3 for densenet
   img_size: 32
   transform_params:  # for  resnet/densenet on cifar10
