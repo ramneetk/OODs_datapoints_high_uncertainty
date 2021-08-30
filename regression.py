@@ -16,7 +16,7 @@ from sklearn import preprocessing
 
 # parse command line arguments for the config file
 def parse_args(): 
-    parser = argparse.ArgumentParser(description='PyTorch code: Mahalanobis detector')
+    parser = argparse.ArgumentParser(description='PyTorch code: Ensembled detector')
     parser.add_argument('--config',  '-c',
                         dest="filename",
                         metavar='FILE',
@@ -40,7 +40,7 @@ def main():
     dataset_list = config['model_params']['dataset_list']
     score_list = config['exp_params']['score_list']
     
-    # train and measure the performance of Mahalanobis detector
+    # train and measure the performance of Ensembled detector
     list_best_results, list_best_results_index = [], []
     for dataset in dataset_list:
         #print('In-distribution: ', dataset)
