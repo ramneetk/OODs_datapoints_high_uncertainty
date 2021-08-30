@@ -1,3 +1,5 @@
+# Build on top of lib_generation.py from https://github.com/pokaxpoka/deep_Mahalanobis_detector
+
 from __future__ import print_function
 import torch
 import numpy as np
