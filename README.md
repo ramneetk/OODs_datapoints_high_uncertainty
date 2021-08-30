@@ -11,5 +11,8 @@ It is tested under Ubuntu Linux 16.04.1 and Python 3.6 environment, and requries
 3. [scikit-learn](https://scikit-learn.org/stable/)
 
 ## Downloading OOD datasets
+mkdir data and download the following OOD datasets in ./data
 1. [Tiny ImageNet (resized)](https://www.dropbox.com/s/kp3my3412u5k9rl/Imagenet_resize.tar.gz)
 2. [LSUN (resized)](https://www.dropbox.com/s/moqh2wh8696c3yl/LSUN_resize.tar.gz)
+
+##
