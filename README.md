@@ -18,17 +18,18 @@ mkdir data and download the following OOD datasets in ./data
 ## Downloading pre-trained models
 mkdir pre_trained and download the .pth files in ./pre_trained from this [link.](https://drive.google.com/drive/folders/1yuiTOgKgPsLGNJwoRckSAHXBZ_AOBlGI?usp=sharing)
 
-## Generating Baseline and ODIN (from deep_Mahalanobis_detector code directory) CHECK FIRST
-1. Baseline - python OOD_Baseline_and_ODIN.py --dataset cifar10 --net_type resnet34 --gpu 0
-2. ODIN - after modifying T and M
-
-## Generating OOD and ID features
+## Generating our results involes 2 steps:
+### Generating OOD and ID features
 1. Edit configs/generation_config.yaml for command line arguments like pretrained_model_path, net_type, out_dist_list etc. in model_params, gpu no. in trainer_params and outf as output directory for storing the generated features in logging_params
 2. python generation.py
 
-## Training logistic regression on OOD and ID features for OOD detection
+### Training logistic regression on OOD and ID features for OOD detection
 1. Edit configs/regression_config.yaml with dataset_list as the ID dataset, out_dist_list in model_params and outf in the logging_params as the same outf in generation_config.yaml
 2. python regression.py
+
+## Generating Baseline and ODIN (from deep_Mahalanobis_detector code directory) CHECK FIRST
+1. Baseline - python baseline_and_ODIN.py --dataset cifar10 --net_type resnet34 --gpu 2 --m 0 --t 1
+2. ODIN - python baseline_and_ODIN.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu 2 --m 0.005 --t 10 
 
 ## Generating Mahalanobis results
 1. In configs/generation.yaml make regressor_features: ['mahalanobis_tied_cov'] in exp_params
