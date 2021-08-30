@@ -28,7 +28,7 @@ mkdir pre_trained and download the .pth files in ./pre_trained from this [link.]
 2. python regression.py
 
 ## Generating Baseline (SBP) results
-1. Baseline - python baseline.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu $gpu no.$
+python baseline.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu $gpu no.$
 
 ## Generating Mahalanobis results
 1. In configs/generation.yaml make regressor_features: ['mahalanobis_tied_cov'] in exp_params
