@@ -1,4 +1,4 @@
-# several functions are from https://github.com/xingjunm/lid_adversarial_subspace_detection
+# build on top of lib_regression from https://github.com/pokaxpoka/deep_Mahalanobis_detector
 from __future__ import print_function
 import numpy as np
 import os
