@@ -1,5 +1,4 @@
-# original code is from https://github.com/aaron-xichen/pytorch-playground
-# modified by Kimin Lee
+# Build on top of data_loader from https://github.com/pokaxpoka/deep_Mahalanobis_detector
 import torch
 import sklearn.datasets as sklearn_datasets
 from torchvision import datasets, transforms
