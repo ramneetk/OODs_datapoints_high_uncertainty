@@ -26,5 +26,5 @@ python baseline_and_ODIN.py --dataset $cifar10/svhn$ --net_type $resnet34/resnet
 2. python generation.py
 
 ## Training logistic regression on OOD and ID features for OOD detection
-1. Edit configs/regression_cofig.yaml with dataset_list as the ID dataset, out_dist_list in model_params and outf in the logging_params as the same outf in generation_config.yaml
+1. Edit configs/regression_config.yaml with dataset_list as the ID dataset, out_dist_list in model_params and outf in the logging_params as the same outf in generation_config.yaml
 2. python regression.py
