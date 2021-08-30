@@ -21,7 +21,7 @@ def parse_args():
                         dest="filename",
                         metavar='FILE',
                         help =  'path to the config file',
-                        default='configs/OOD_Regression_Mahalanobis_config.yaml')
+                        default='configs/regression_config.yaml')
 
     args = parser.parse_args()
     with open(args.filename, 'r') as file:
