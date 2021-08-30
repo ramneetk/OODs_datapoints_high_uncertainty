@@ -13,8 +13,7 @@ model_params:
   #transform_params:  # for  lenet on mnist
    # mean: []
    # std: []
-  out_dist_list: ['imagenet_resize']
-  #out_dist_list: ['svhn', 'imagenet_resize', 'lsun_resize', 'subset_cifar100'] # cifar10, mnist, kmnist, fashion-mnist for other datasets
+  out_dist_list: ['svhn', 'imagenet_resize', 'lsun_resize', 'subset_cifar100'] # cifar10, mnist, kmnist, fashion-mnist for other datasets
   out_idx: [6, 14, 68, 71] # these are the ids of bee, butterfly, road and sea res. in CIFAR100, not req for other datasets
   num_oods: 2000 # required when OOD is subset_cifar100
 
