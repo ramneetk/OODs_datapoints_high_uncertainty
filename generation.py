@@ -436,7 +436,7 @@ def main(config, device, model, in_transform, train_loader, test_loader):
                 regressor_in_dist_input = np.asarray(regressor_in_dist_input, dtype=np.float32)
                 regressor_out_dist_input = np.asarray(regressor_out_dist_input, dtype=np.float32)
                 Mahalanobis_data, Mahalanobis_labels = lib_generation.merge_and_generate_labels(regressor_out_dist_input, regressor_in_dist_input)
-                file_name = os.path.join(config['logging_params']['outf'], 'Mahalanobis_%s_%s_%s_%s.npy' % (str(m_list[0]), str(k), config['exp_params']['dataset'] , out_dist))
+                file_name = os.path.join(config['logging_params']['outf'], 'Ensembled_%s_%s_%s_%s.npy' % (str(m_list[0]), str(k), config['exp_params']['dataset'] , out_dist))
                 Mahalanobis_data = np.concatenate((Mahalanobis_data, Mahalanobis_labels), axis=1)
                 np.save(file_name, Mahalanobis_data)
                 regressor_in_dist_input = regressor_in_dist_input[:,:-additional_cols]
