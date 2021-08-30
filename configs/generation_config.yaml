@@ -1,8 +1,8 @@
 model_params:
-  name: 'DenseNet3' # ResNet50/DenseNet3/LeNet5
-  net_type: 'densenet' # densenet/lenet5
-  pretrained_model_path: './pre_trained/densenet3_cifar10.pth' #resnet$34/50$_cifar10.pth/densenet3_cifar10.pth/resnet34_svhn.pth/densenet3_svhn.pth/lenet5_mnist.pth
-  penul_layer: 3 #4 for resnet and 3 for densenet
+  name: 'ResNet34' # ResNet34/ResNet50/DenseNet3/LeNet5
+  net_type: 'resnet' # resnet/densenet/lenet5
+  pretrained_model_path: './pre_trained/resnet34_cifar10.pth' #resnet$34/50$_cifar10.pth/densenet3_cifar10.pth/resnet34_svhn.pth/densenet3_svhn.pth/lenet5_mnist.pth
+  penul_layer: 4 #4 for resnet and 3 for densenet
   img_size: 32
   transform_params:  # for  resnet/densenet on cifar10
      mean: [0.4914, 0.4822, 0.4465]
@@ -31,7 +31,7 @@ exp_params:
   odin_args:
     settings: [[10,0.005]] # T=10, noise_epsilon=0.005
   noise_params:
-    m_list: [0.0] # noise for Mahalanobis method
+    m_list: [0.0] # 0 noise for Mahalanobis method
     gradient_params: [0.2023, 0.1994, 0.2010]
   regressor_features: ['knn_mahalanobis_tied_cov', 'mahalanobis_tied_cov', 'pca', 'ODIN']
 
