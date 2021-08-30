@@ -27,9 +27,8 @@ mkdir pre_trained and download the .pth files in ./pre_trained from this [link.]
 1. Edit configs/regression_config.yaml with dataset_list as the ID dataset, out_dist_list in model_params and outf in the logging_params as the same outf in generation_config.yaml
 2. python regression.py
 
-## Generating Baseline and ODIN (from deep_Mahalanobis_detector code directory) CHECK FIRST
-1. Baseline - python baseline_and_ODIN.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu 2 --m 0 --t 1
-2. ODIN - python baseline_and_ODIN.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu 2 --m 0.005 --t 10 
+## Generating Baseline (SBP) results
+1. Baseline - python baseline.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu $gpu no.$
 
 ## Generating Mahalanobis results
 1. In configs/generation.yaml make regressor_features: ['mahalanobis_tied_cov'] in exp_params
