@@ -18,7 +18,7 @@ from torch.autograd import Variable
 
 # parse command line arguments for the config file
 def parse_args(): 
-    parser = argparse.ArgumentParser(description='PyTorch code: Mahalanobis detector')
+    parser = argparse.ArgumentParser(description='PyTorch code: Ensembled detector')
     parser.add_argument('--config',  '-c',
                         dest="filename",
                         metavar='FILE',
@@ -435,20 +435,20 @@ def main(config, device, model, in_transform, train_loader, test_loader):
 
                 regressor_in_dist_input = np.asarray(regressor_in_dist_input, dtype=np.float32)
                 regressor_out_dist_input = np.asarray(regressor_out_dist_input, dtype=np.float32)
-                Mahalanobis_data, Mahalanobis_labels = lib_generation.merge_and_generate_labels(regressor_out_dist_input, regressor_in_dist_input)
+                Ensembled_data, Ensembled_labels = lib_generation.merge_and_generate_labels(regressor_out_dist_input, regressor_in_dist_input)
                 file_name = os.path.join(config['logging_params']['outf'], 'Ensembled_%s_%s_%s_%s.npy' % (str(m_list[0]), str(k), config['exp_params']['dataset'] , out_dist))
-                Mahalanobis_data = np.concatenate((Mahalanobis_data, Mahalanobis_labels), axis=1)
-                np.save(file_name, Mahalanobis_data)
+                Ensembled_data = np.concatenate((Ensembled_data, Ensembled_labels), axis=1)
+                np.save(file_name, Ensembled_data)
                 regressor_in_dist_input = regressor_in_dist_input[:,:-additional_cols]
                 regressor_out_dist_input = regressor_out_dist_input[:,:-additional_cols]
 
         else:
             regressor_in_dist_input = np.asarray(regressor_in_dist_input, dtype=np.float32)
             regressor_out_dist_input = np.asarray(regressor_out_dist_input, dtype=np.float32)
-            Mahalanobis_data, Mahalanobis_labels = lib_generation.merge_and_generate_labels(regressor_out_dist_input, regressor_in_dist_input)
-            file_name = os.path.join(config['logging_params']['outf'], 'Mahalanobis_%s_%s_%s_%s.npy' % (str(m_list[0]), str(0), config['exp_params']['dataset'] , out_dist))
-            Mahalanobis_data = np.concatenate((Mahalanobis_data, Mahalanobis_labels), axis=1)
-            np.save(file_name, Mahalanobis_data)
+            Ensembled_data, Ensembled_labels = lib_generation.merge_and_generate_labels(regressor_out_dist_input, regressor_in_dist_input)
+            file_name = os.path.join(config['logging_params']['outf'], 'Ensembled_%s_%s_%s_%s.npy' % (str(m_list[0]), str(0), config['exp_params']['dataset'] , out_dist))
+            Ensembled_data = np.concatenate((Ensembled_data, Ensembled_labels), axis=1)
+            np.save(file_name, Ensembled_data)
 
 
 def plot_tsne(config, device, model, in_data_loader, out_data_loader, ood_labels, layer_index): 
