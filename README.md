@@ -22,6 +22,9 @@ mkdir pre_trained and download the .pth files in ./pre_trained from this [link.]
 1. Baseline - python OOD_Baseline_and_ODIN.py --dataset cifar10 --net_type resnet34 --gpu 0
 2. ODIN - after modifying T and M
 
+## Mahalanobis results
+
+
 ## Generating OOD and ID features
 1. Edit configs/generation_config.yaml for command line arguments pretrained_model_path, net_type, out_dist_list etc. in model_params, gpu no. in trainer_params and outf as output directory for storing the generated features in logging_params
 2. python generation.py
