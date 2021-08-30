@@ -20,7 +20,7 @@ mkdir pre_trained and download the .pth files in ./pre_trained from this [link.]
 
 ## Generating our results involes 2 steps:
 ### Generating OOD and ID features
-1. Edit configs/generation_config.yaml for command line arguments like pretrained_model_path, net_type, out_dist_list etc. in model_params, gpu no. in trainer_params and outf as output directory for storing the generated features in logging_params
+1. Edit configs/generation_config.yaml for command line arguments like pretrained_model_path, net_type, out_dist_list etc. in model_params, dataset as ID dataset in exp_params, gpu no. in trainer_params and outf as output directory for storing the generated features in logging_params
 2. python generation.py
 
 ### Training logistic regression on OOD and ID features for OOD detection
