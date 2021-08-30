@@ -23,7 +23,7 @@ def parse_args():
                         dest="filename",
                         metavar='FILE',
                         help =  'path to the config file',
-                        default='configs/OOD_Generate_Mahalanobis_config.yaml')
+                        default='configs/generation_config.yaml')
 
     args = parser.parse_args()
     with open(args.filename, 'r') as file:
