@@ -330,7 +330,7 @@ def main(config, device, model, in_transform, train_loader, test_loader):
 
 
     init_reg_in = True
-    #print("For in-distribution: {}".format(config['exp_params']['dataset']))
+    print("For in-distribution: {}".format(config['exp_params']['dataset']))
     for regressor_feature in regressor_features:
         if  regressor_feature == 'knn_mahalanobis_class_cov' or regressor_feature == 'knn_mahalanobis_tied_cov':
             continue
@@ -364,7 +364,7 @@ def main(config, device, model, in_transform, train_loader, test_loader):
         #     out_test_loader = data_loader.getNonTargetDataSet(out_dist, config['trainer_params']['batch_size'], tf_stl10, config['exp_params']['dataroot'], idx=config['model_params']['out_idx'], num_oods=config['model_params']['num_oods'])
         else:
             out_test_loader = data_loader.getNonTargetDataSet(out_dist, config['trainer_params']['batch_size'], in_transform, config['exp_params']['dataroot'])
-        #print('Out-distribution: ' + out_dist)
+        print('Out-distribution: ' + out_dist)
         
         init_reg_out = True
         for regressor_feature in regressor_features:
