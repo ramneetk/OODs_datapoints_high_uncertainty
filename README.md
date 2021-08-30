@@ -22,10 +22,6 @@ mkdir pre_trained and download the .pth files in ./pre_trained from this [link.]
 1. Baseline - python OOD_Baseline_and_ODIN.py --dataset cifar10 --net_type resnet34 --gpu 0
 2. ODIN - after modifying T and M
 
-## Generating Mahalanobis results
-1. 
-2. In configs/regresssion.yaml change score_list: ['Ensembled_0.0_0'] in exp_params
-
 ## Generating OOD and ID features
 1. Edit configs/generation_config.yaml for command line arguments like pretrained_model_path, net_type, out_dist_list etc. in model_params, gpu no. in trainer_params and outf as output directory for storing the generated features in logging_params
 2. python generation.py
@@ -33,3 +29,9 @@ mkdir pre_trained and download the .pth files in ./pre_trained from this [link.]
 ## Training logistic regression on OOD and ID features for OOD detection
 1. Edit configs/regression_config.yaml with dataset_list as the ID dataset, out_dist_list in model_params and outf in the logging_params as the same outf in generation_config.yaml
 2. python regression.py
+
+## Generating Mahalanobis results
+1. In configs/generation.yaml make regressor_features: ['mahalanobis_tied_cov'] in exp_params
+2. In configs/regresssion.yaml make score_list: ['Ensembled_0.0_0'] in exp_params
+3. python generation.py
+4. python regression.py
