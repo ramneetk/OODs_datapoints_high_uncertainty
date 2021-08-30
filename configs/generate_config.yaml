@@ -1,0 +1,60 @@
+model_params:
+  name: 'DenseNet3' # ResNet50/DenseNet3/LeNet5
+  net_type: 'densenet' # densenet/lenet5
+  pretrained_model_path: './pre_trained/densenet3_cifar10.pth' #resnet$34/50$_cifar10.pth/densenet3_cifar10.pth/resnet34_svhn.pth/densenet3_svhn.pth/lenet5_mnist.pth
+  penul_layer: 3 #4 for resnet and 3 for densenet
+  img_size: 32
+  transform_params:  # for  resnet/densenet on cifar10
+     mean: [0.4914, 0.4822, 0.4465]
+     std: [0.2023, 0.1994, 0.2010]
+  #transform_params:  # for  densenet on svhn
+   #  mean: [0.4913, 0.4824, 0.4467]
+   #  std: [0.2471, 0.2435, 0.2616]
+  #transform_params:  # for  lenet on mnist
+   # mean: []
+   # std: []
+  out_dist_list: ['imagenet_resize']
+  #out_dist_list: ['svhn', 'imagenet_resize', 'lsun_resize', 'subset_cifar100'] # cifar10, mnist, kmnist, fashion-mnist for other datasets
+  out_idx: [6, 14, 68, 71] # these are the ids of bee, butterfly, road and sea res. in CIFAR100, not req for other datasets
+  num_oods: 2000 # required when OOD is subset_cifar100
+
+exp_params:
+  dataset: 'cifar10'
+  dataroot: './data'
+  num_classes: 10
+  knn_args: 
+    k: [10,20,30,40,50]
+    knn_type: 'annoy'
+    keep_original: False 
+    keep_knn_mean: False
+    keep_knn_std: True
+  odin_args:
+    settings: [[10,0.005]] # T=10, noise_epsilon=0.005
+  noise_params:
+    m_list: [0.0] # noise for Mahalanobis method
+    gradient_params: [0.2023, 0.1994, 0.2010]
+  regressor_features: ['knn_mahalanobis_tied_cov', 'mahalanobis_tied_cov', 'pca', 'ODIN']
+
+tsne_params:
+  n_components: 2
+  verbose: 1
+  perplexity: 40
+  n_iter: 800
+  random_state: 340
+  # class_list: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11']
+  # color_list: ['b', 'g', 'r', 'c', 'm', 'y', 'tab:brown', 'tab:gray', 'tab:orange', 'tab:pink', 'tab:purple']
+  class_list: ['Class 1', 'Class 2', 'Class 3', 'Class 4', 'Class 5', 'Class 6', 'Class 7', 'Class 8', 'Class 9', 'Class 10', 'Class 11']
+  color_list: ['b', 'g', 'r', 'c', 'm', 'y', 'tab:brown', 'tab:gray', 'tab:orange', 'tab:pink', 'k']
+  # feature_file_list: ['analyze-results/penultimate_features_in_dist_train.npz', 'analyze-results/penultimate_features_out_dist_train.npz']
+  feature_file_list: ['in-dist-penul-features.npz', 'most_outlier_features.npz']
+  ood_labels_file: 'scifar100_mahala_tied_labels.npz'
+  num_train_ood: 200
+  plot_file_name: 'test-800-itr-in-out-TSNE'
+
+trainer_params:
+  gpu: 0
+  batch_size: 100
+
+logging_params:
+  outf: './test/'
+  in_features_file_list: ['test.npz']
