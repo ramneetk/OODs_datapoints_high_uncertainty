@@ -31,7 +31,7 @@ mkdir pre_trained and download the .pth files in ./pre_trained from this [link.]
 python baseline.py --dataset $svhn/cifar10$ --net_type $resnet34/resnet50/densenet3$ --gpu $gpu no.$
 
 ## Generating Mahalanobis results
-1. In configs/generation.yaml make regressor_features: ['mahalanobis_tied_cov'] in exp_params
-2. In configs/regresssion.yaml make score_list: ['Ensembled_0.0_0'] in exp_params
+1. In configs/generation.yaml change regressor_features: ['mahalanobis_tied_cov'] in exp_params
+2. In configs/regresssion.yaml change score_list: ['Ensembled_0.0_0'] in exp_params
 3. python generation.py
 4. python regression.py
